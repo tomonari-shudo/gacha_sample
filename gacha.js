@@ -20,21 +20,21 @@ startImg.onclick = () => {
     const img = document.createElement('img');
 
     //抽選
-    const randomNum = Math.floor(Math.random()*100); //1~100の乱数を生成
-    if(randomNum<=3){
+    const randomNum = Math.floor(Math.random()*100); //1~100の乱数を獲得
+    if(0 < randomNum && randomNum <=3){ //SSR(3%)の処理、乱数1~3はここ
         paragraph.innerText = config[0].toLocaleString()+'円';
         img.src = './img/ssr.png'; //SSR用の演出に使う画像を設定
         img.className = 'purun'; //SSR用のアニメーションを設定
         paragraph.className = 'ssr';
-    }else if(randomNum<=17 +(3)){
+    }else if(3 < randomNum && randomNum <= 20){ //SR(17%)の処理、乱数4~20はここ
         paragraph.innerText = config[1].toLocaleString()+'円';
         img.src = './img/sr.png'; //SR用の演出に使う画像を選択
         img.className = 'poyon'; //SR用のアニメーションを設定
         paragraph.className = 'sr';
-    }else if(randomNum<=30 +(3+17)){
+    }else if(20 < randomNum && randomNum <= 50){　//R(30%)の処理、乱数21~50はここ
         paragraph.innerText = config[2].toLocaleString()+'円';
         paragraph.className = 'r';
-    }else if(randomNum<=50 +(3+17+30)){
+    }else{ //C(50%)の処理、乱数51~100はここ
         paragraph.innerText = config[3].toLocaleString()+'円';
         paragraph.className = 'c';
     }
