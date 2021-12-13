@@ -43,7 +43,7 @@ body {
 .trigger {
     width: 20%;
     height: 20%;
-    /*animation: korokoro 2.5s linear 0s infinite;*/
+    animation: korokoro 2.5s linear 0s infinite;
 }
 
 .ssrEffect {
